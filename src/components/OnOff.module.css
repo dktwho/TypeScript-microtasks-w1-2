@@ -1,0 +1,35 @@
+.indicatorOnOff {
+    display: flex;
+    justify-content: center;
+    margin: 5px 5px;
+}
+.button {
+    background-color: gray;
+}
+
+.buttonOn {
+    background-color: green;
+}
+
+.buttonOff {
+    background-color: red;
+}
+
+.indicatorOn {
+    height: 30px;
+    width: 30px;
+    border-radius: 50px;
+    border: 2px solid black;
+    margin: 0 10px;
+    background-color: green;
+}
+
+.indicatorOff {
+    height: 30px;
+    width: 30px;
+    border-radius: 50px;
+    border: 2px solid black;
+    margin: 0 10px;
+    background-color: red;
+}
+

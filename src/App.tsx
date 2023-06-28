@@ -3,6 +3,8 @@ import './App.css';
 import {FullInput} from "./components/FullInput";
 import {Input} from "./components/Input";
 import {Button} from "./components/Button";
+import {OnOff} from "./components/OnOff";
+
 
 function App() {
     let [message, setMessage] = useState([
@@ -52,6 +54,13 @@ function App() {
                         <div key={index}>{el.text}</div>
                     )
                 })}
+                <br/>
+                <br/>
+                <hr/>
+            </div>
+            <div >
+                <OnOff status={false}/>
+                <OnOff status={true}/>
             </div>
 
 
