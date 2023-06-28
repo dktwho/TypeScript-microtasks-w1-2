@@ -9,7 +9,6 @@ export const FullInput = ({addMessage}: FullInputType) => {
     const onChangeInputHandler = (event: ChangeEvent<HTMLInputElement>) => {
         setValue(event.currentTarget.value)
     }
-
     const onClickButtonHandler = () => {
         addMessage(value)
         setValue('')
