@@ -13,9 +13,7 @@ function App() {
 
     const addMessage = (value: string) => {
         console.log(value)
-        // let newMessage = {message: 'message4'}
-        let newMessage = {message: value}
-        setMessage([newMessage, ...message])
+        setMessage([{message: value}, ...message])
 
     }
 

@@ -12,6 +12,7 @@ export const FullInput = ({addMessage}: FullInputType) => {
 
     const onClickButtonHandler = () => {
         addMessage(value)
+        setValue('')
     }
 
 
