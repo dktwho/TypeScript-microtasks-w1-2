@@ -1,21 +1,28 @@
 import React, {ChangeEvent, useState} from 'react';
 
-export const FullInput = () => {
-    let [value, setValue] = useState('')
+type FullInputType = {
+    addMessage: (value: string) => void
+}
 
-    const onChangeInputHandler = (event:ChangeEvent<HTMLInputElement>) => {
-        console.log(event.currentTarget.value)
+export const FullInput = ({addMessage}: FullInputType) => {
+    let [value, setValue] = useState('')
+    const onChangeInputHandler = (event: ChangeEvent<HTMLInputElement>) => {
+        setValue(event.currentTarget.value)
     }
 
     const onClickButtonHandler = () => {
-        console.log('click')
+        addMessage(value)
     }
+
+
+    // const onClickButtonHandler = () => {
+    //     console.log('click')
+    // }
 
     return (
         <div>
-            <input type="text" onChange={onChangeInputHandler} />
+            <input type="text" onChange={onChangeInputHandler} value={value}/>
             <button onClick={onClickButtonHandler}>Add</button>
-            <div>{value}</div>
         </div>
     );
 };
