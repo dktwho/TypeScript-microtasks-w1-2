@@ -20,6 +20,19 @@ function App() {
     ])
 
     let [title, setTitle] = useState('')
+    let [indicator, setIndicator] = useState(false)
+
+    const toggleIndicator = () => {
+        setIndicator(!indicator)
+    }
+
+    const indicatorOff = () => {
+        setIndicator(false)
+    }
+
+    const indicatorOn = () => {
+        setIndicator(true)
+    }
 
     const addMessage = (value: string) => {
         setMessage([{message: value}, ...message])
@@ -58,9 +71,13 @@ function App() {
                 <br/>
                 <hr/>
             </div>
-            <div >
-                <OnOff status={false}/>
-                <OnOff status={true}/>
+            <div>
+                <OnOff
+                    status={indicator}
+                    toggleIndicator={toggleIndicator}
+                    indicatorOff={indicatorOff}
+                    indicatorOn={indicatorOn}
+                />
             </div>
 
 
