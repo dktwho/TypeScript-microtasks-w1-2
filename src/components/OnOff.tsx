@@ -1,24 +1,30 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled from "./OnOff.module.css";
 
+export const OnOff = () => {
+    let [indicator, setIndicator] = useState(false)
 
-type ButtonStatusType = {
-    status: boolean;
-    toggleIndicator: () => void;
-    indicatorOff: () => void
-    indicatorOn: () => void
-}
-export const OnOff = ({status, toggleIndicator, indicatorOff, indicatorOn}: ButtonStatusType) => {
+    const toggleIndicator = () => {
+        setIndicator(!indicator)
+    }
+
+    const indicatorOff = () => {
+        setIndicator(false)
+    }
+
+    const indicatorOn = () => {
+        setIndicator(true)
+    }
 
     return (
         <div className={styled.indicatorOnOff}>
-            <button onClick={() => indicatorOn()} className={status ? `${styled.buttonOn}` : `${styled.button}`}>On
+            <button onClick={() => indicatorOn()} className={indicator ? `${styled.buttonOn}` : `${styled.button}`}>On
             </button>
             <button onClick={() => indicatorOff()}
-                    className={!status ? `${styled.buttonOff}` : `${styled.button}`}>Off
+                    className={!indicator ? `${styled.buttonOff}` : `${styled.button}`}>Off
             </button>
             <div onClick={() => toggleIndicator()}
-                 className={status ? `${styled.indicatorOn}` : `${styled.indicatorOff}`}></div>
+                 className={indicator ? `${styled.indicatorOn}` : `${styled.indicatorOff}`}></div>
         </div>
     );
 };

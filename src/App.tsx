@@ -20,19 +20,6 @@ function App() {
     ])
 
     let [title, setTitle] = useState('')
-    let [indicator, setIndicator] = useState(false)
-
-    const toggleIndicator = () => {
-        setIndicator(!indicator)
-    }
-
-    const indicatorOff = () => {
-        setIndicator(false)
-    }
-
-    const indicatorOn = () => {
-        setIndicator(true)
-    }
 
     const addMessage = (value: string) => {
         setMessage([{message: value}, ...message])
@@ -42,7 +29,6 @@ function App() {
         setTexts([{text: title}, ...texts])
         setTitle('')
     }
-
 
     return (
         <div className="App">
@@ -72,12 +58,7 @@ function App() {
                 <hr/>
             </div>
             <div>
-                <OnOff
-                    status={indicator}
-                    toggleIndicator={toggleIndicator}
-                    indicatorOff={indicatorOff}
-                    indicatorOn={indicatorOn}
-                />
+                <OnOff/>
             </div>
 
 
